@@ -1,0 +1,27 @@
+Este prob sugue cuando tiras una instalacion limpia de docker, parece que configura como red interna de docker la ip 192.168.0.1, justamente la que tengo en el router. 
+Esto afecta la conectividad y hace que solo pueda acceder a navegar desde otras redes o con VPN. 
+
+Solucion: 
+Cambiar inet de docker: 
+
+https://forums.docker.com/t/how-to-change-docker0-network/4705/2
+
+
+
+sudo nano /etc/default/docker
+
+ 7196  2019-09-22 08:38  ifconfig
+ 7197  2019-09-22 08:39  sudo nano /etc/default/docker
+ 7198  2019-09-22 08:41  sudo reboot
+ 7199  2019-09-22 08:42  ifconfig
+ 7200  2019-09-22 08:42  ping google.com.ar
+ 7201  2019-09-22 08:42  history
+##
+ 7202  2019-09-22 08:43  sudo rm /etc/docker/daemon.json
+## Esto fue un intento de configurarle al demonio una nueva sub red, no funco
+ 7203  2019-09-22 08:43  systemctl status docker.service
+ 7204  2019-09-22 08:43  docker
+ 7205  2019-09-22 08:43  docker start
+ 7206  2019-09-22 08:44  sudo service docker restart
+ 7207  2019-09-22 08:44  systemctl status docker.service
+
