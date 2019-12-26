@@ -1,0 +1,14 @@
+When you try to login from terminal to docker hub, recibe this error: 
+
+Error response from daemon: Get https://registry-1.docker.io/v2/: dial tcp: lookup registry-1.docker.io...
+
+
+FIrst all, try to do pull from any image
+
+Error response from daemon: Get https://registry-1.docker.io/v2/: dial tcp: lookup registry-1.docker.io
+
+docker pull centos:6.8
+
+and later do login process: 
+
+docker login
