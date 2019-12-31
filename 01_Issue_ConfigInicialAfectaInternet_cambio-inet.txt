@@ -25,3 +25,11 @@ sudo nano /etc/default/docker
  7206  2019-09-22 08:44  sudo service docker restart
  7207  2019-09-22 08:44  systemctl status docker.service
 
+31/12/2019  Me sucedio lo mismo, un container me genero un bridge que tomaba la ip 192.168.0.1 (la del modem), por mas que la borraba cuando reinciaba volvia a generarse
+
+ 9996  2019-12-31 05:38  docker network ls
+ 9997  2019-12-31 05:38  docker network prune
+ 9998  2019-12-31 05:39  docker network rm 0b657ddec784
+ #Con esto termine borrando el bridge que me generaba automaticamente 
+ 9999  2019-12-31 05:39  ifconfig
+10000  2019-12-31 05:39  sudo reboot
